@@ -2,8 +2,6 @@
 
 {% block main %}
 
-{% include 'flash_messages.html' %}
-
 
 {% for user in users %}
 <div class="grid-container">
@@ -11,11 +9,16 @@
   <img src=" {{url_for('static', filename = 'uploads/'+ user.filename)}} ">
   </div>
   <div class="user-info-container">
-    <h6> {{user.first_name}} {{user.last_name}}</h6>
+    <h4><b> {{user.first_name}} {{user.last_name}} </b> </h4>
     <p> <i class="fa fa-map-marker" aria-hidden="true"></i> {{user.location}} </p>
+      <p> {{ user.dates }} </p>
   </div>
-  <div class="view-profile-button"><a href="{{url_for('userprofile', userid = user.id)}})"> <button>View Profile</button> </a> </div>
-  <br>
+    <div>
+        <h4> About Me</h4>
+        <br/>
+        <p> {{ user.bio }}</p>
+    </div>
+    <br/>
 
 </div>
 {% endfor %}

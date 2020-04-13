@@ -103,7 +103,8 @@ def profile():
         users = Use.query.all()
 
         flash('You have successfully filled out the form', 'success')
-        return render_template('profiles.html', filename=filename, firstname=firstname, lastname=lastname, gender=gender, location=location, users=users)
+        return render_template('profiles.html', filename=filename, firstname=firstname, lastname=lastname,
+                               gender=gender, location=location, users=users)
 
     return render_template('add_profile.html', form=myform)
 
@@ -113,6 +114,13 @@ def profiles():
     users = Use.query.all()
 
     return render_template('profiles.html', users=users)
+
+
+@app.route("/profiles/<userid>")
+def userProfiles():
+    users = Use.query.filter_by(userid=id).first()
+
+    return render_template('userprofile.html', users=users, date=format_date(users.dates))
 
 
 # user_loader callback. This callback is used to reload the user object from

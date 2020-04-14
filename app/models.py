@@ -17,12 +17,6 @@ class MyForm(FlaskForm):
     photo = FileField('Profile Photo', validators=[FileRequired(), FileAllowed(['jpg', 'png', 'Images only!'])])
 
 
-class PhotoForm(FlaskForm):
-    photo = FileField('Profile Photo', validators=[
-        FileRequired(),
-        FileAllowed(['jpg', 'png', 'Images only!'])
-    ])
-
 class Use(db.Model):
     # You can use this to change the table name. The default convention is to use
     # the class name. In this case a class name of UserProfile would create a

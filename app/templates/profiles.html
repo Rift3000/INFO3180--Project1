@@ -6,18 +6,28 @@
 
 
 {% for user in users %}
-<div class="grid-container">
-  <div class="image-container">
-  <img src=" {{url_for('static', filename = 'uploads/'+ user.filename)}} ">
-  </div>
-  <div class="user-info-container">
-    <h6> {{user.first_name}} {{user.last_name}}</h6>
-    <p> <i class="fa fa-map-marker" aria-hidden="true"></i> {{user.location}} </p>
-  </div>
-  <div class="view-profile-button"><a href="{{url_for('userprofile', userid = user.id)}})"> <button>View Profile</button> </a> </div>
-  <br>
 
+<div class="container">
+<div class="card " >
+  <div class="row">
+    <div class="col-md-4" style="padding-top:30px;padding-left:100px;padding-bottom:30px;">
+       <img style="height:200px;width:200px" src=" {{url_for('static', filename = 'uploads/'+ user.photo)}} ">
+    </div>
+    <div class="col-md-4" >
+      <div class="card-body" >
+        <h5 class="card-title" style="padding-top:20px">  <b>{{user.first_name}} {{user.last_name}}</b> </h5>
+        <p class="card-text"> <i class="fas fa-user-alt"></i> {{ user.gender }} </p>
+        <p class="card-text"> <i class="fa fa-map-marker" aria-hidden="true"></i> {{user.location}} </p>
+      </div>
+    </div>
+    <div class="col-md-4 " style="padding-top:100px">
+      <div ><a href="{{url_for('userProfiles', userid=user.id)}}"> <button style="width:50%" class="btn-lg btn-primary">View Profile</button> </a> </div>
+    </div>
+  </div>
 </div>
+  </div>
+
+<br/>
 {% endfor %}
 
 

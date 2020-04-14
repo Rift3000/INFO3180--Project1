@@ -3,25 +3,41 @@
 {% block main %}
 
 
-{% for user in users %}
-<div class="grid-container">
-  <div class="image-container">
-  <img src=" {{url_for('static', filename = 'uploads/'+ user.filename)}} ">
-  </div>
-  <div class="user-info-container">
-    <h4><b> {{user.first_name}} {{user.last_name}} </b> </h4>
-    <p> <i class="fa fa-map-marker" aria-hidden="true"></i> {{user.location}} </p>
-      <p> {{ user.dates }} </p>
-  </div>
-    <div>
-        <h4> About Me</h4>
-        <br/>
-        <p> {{ user.bio }}</p>
+<div class="container">
+<div class="card" >
+  <div class="row">
+    <div class="col-md-4" style="padding-top:30px;padding-left:100px;padding-bottom:30px;">
+      <img style="height:200px;width:200px" src="{{ url_for('static', filename="uploads/" + users.photo) }}" />
+    </div>
+    <div class="col-lg-4">
+      <div class="card-body" >
+        <h5 class="card-title"> {{ users.first_name }} {{ users.last_name }} </h5>
+        <p class="card-text"> <i style="color:green" class="fas fa-envelope" aria-hidden="true"></i> {{ users.email }} </p>
+        <p class="card-text"> <i style="color:blue" class="fa fa-map-marker" aria-hidden="true"></i> {{ users.location }} </p>
+        <p class="card-text"> <i style="color:purple" class="fas fa-calendar-day" aria-hidden="true"></i> {{ users.dates }} </p>
+      </div>
+    </div>
+    </div>
+  <div class="row pl-5 pb-5">
+    <div class="col">
+        <h2> About Me </h2>
+        <p> {{users.bio}} </p>
     </div>
     <br/>
+    <br/>
+  </div>
+  <div class="row pl-5">
+    <div class="col">
+      <button class="btn-lg btn-primary" style="background-color:green;font-color:white;width:80%">Send Message</button>
+    </div>
+    <div class="col">
+      <button class="btn-lg btn-primary" style="background-color:blue;font-color:white;width:80%">Follow</button>
+    </div>
+  </div>
+  <div class="pb-3"> </div>
 
 </div>
-{% endfor %}
+  </div>
 
 
 {% endblock %}

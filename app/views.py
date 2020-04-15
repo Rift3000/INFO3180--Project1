@@ -21,9 +21,6 @@ from .models import MyForm
 ###
 
 
-def create_tables():
-    db.create_all()
-
 @app.route('/')
 def home():
     """Render website's home page."""

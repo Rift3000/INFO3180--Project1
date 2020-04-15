@@ -1,7 +1,6 @@
 absl-py==0.8.0
 alabaster==0.7.12
 alembic==1.0.7
-anaconda-client==1.7.2
 anaconda-navigator==1.9.7
 anaconda-project==0.8.2
 asn1crypto==0.24.0
@@ -156,6 +155,7 @@ pylint==2.2.2
 pyodbc==4.0.25
 pyOpenSSL==18.0.0
 pyparsing==2.3.0
+PyQt5==5.9.2
 PySocks==1.6.8
 pytest==4.0.2
 pytest-arraydiff==0.3
@@ -184,6 +184,7 @@ seaborn==0.9.0
 Send2Trash==1.5.0
 simplegeneric==0.8.1
 singledispatch==3.4.0.3
+sip==4.19.8
 six==1.12.0
 snowballstemmer==1.2.1
 sortedcollections==1.0.1

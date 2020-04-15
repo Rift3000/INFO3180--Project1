@@ -12,6 +12,8 @@ username = "Thriller"  #Not wise as far as security is concerned but I simply wa
 password = "cakesoap"  #And the password I used for my database
 db = SQLAlchemy(app)
 
+with app.app_context():
+    db.create_all()
 
 app.config.from_object(__name__)
 from app import views

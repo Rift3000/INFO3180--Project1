@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "whatPassword?"
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://postgres:superuser@localhost/Project1"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://zaqahrusiorfbg:70fd98a0a9f2d3b93f020545305019480877a9974e46ca7d9653f41f672b18a7@ec2-52-87-58-157.compute-1.amazonaws.com:5432/d5kuns2vecqunb"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True # added just to suppress a warning
 
 UPLOAD_FOLDER = './app/static/uploads'

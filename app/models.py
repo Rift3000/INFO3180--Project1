@@ -16,8 +16,7 @@ class MyForm(FlaskForm):
     bio = TextAreaField()
     photo = FileField('Profile Photo', validators=[FileRequired(), FileAllowed(['jpg', 'png', 'Images only!'])])
 
-def create_tables():
-    db.create_all()
+
 
 class Use(db.Model):
     # You can use this to change the table name. The default convention is to use

@@ -20,6 +20,10 @@ from .models import MyForm
 # Routing for your application.
 ###
 
+
+def create_tables():
+    db.create_all()
+
 @app.route('/')
 def home():
     """Render website's home page."""
